@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mero App</string>
+    <string name="text">Text</string>
+    <string-array name="Courses">
+        <item>Select the courses</item>
+        <item>BBA</item>
+        <item>BIM</item>
+        <item>BCA</item>
+        <item>BBS</item>
+        <item>MBS</item>
+    </string-array>
+</resources>
