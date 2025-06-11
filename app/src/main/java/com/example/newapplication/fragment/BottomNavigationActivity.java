@@ -35,15 +35,32 @@ public class BottomNavigationActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Log.i("TAG", "onNavigationItemSelected: selectedId == " + item.getItemId());
                 if (item.getItemId() == R.id.navHome) {
-                    Log.i("TAG", "onNavigationItemSelected 1: hahaha");
+                    HomeFragment homeFragment = new HomeFragment();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.container, homeFragment);
+                    fragmentTransaction.commit();
+                    return true;
                 } else if (item.getItemId() == R.id.navUsers) {
-                    Log.i("TAG", "onNavigationItemSelected 1: nav users");
+                    UserFragment userFragment = new UserFragment();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.container, userFragment);
+                    fragmentTransaction.commit();
+                    return true;
+
                 } else if (item.getItemId() == R.id.navChat) {
-                    Log.i("TAG", "onNavigationItemSelected 1: nav chat");
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.container, profileFragment);
+                    fragmentTransaction.commit();
+                    return true;
+
                 } else if (item.getItemId() == R.id.navProfile) {
-                    Log.i("TAG", "onNavigationItemSelected 1: nav profile");
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.container, profileFragment);
+                    fragmentTransaction.commit();
+                    return true;
                 }
                 return true;
             }
