@@ -24,6 +24,7 @@
 
         <activity android:name=".SecondActivity" />
         <activity android:name=".ChildActivity" />
+        <activity android:name=".menu.MenuActivity"/>
 
     </application>
 

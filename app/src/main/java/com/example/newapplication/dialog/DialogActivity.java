@@ -1,6 +1,7 @@
 package com.example.newapplication.dialog;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,9 +12,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.newapplication.R;
+import com.example.newapplication.menu.MenuActivity;
 
 public class DialogActivity extends AppCompatActivity {
-    Button buttonAlertDialog, buttonCustomDialog, buttonDialogFragment;
+    Button buttonAlertDialog, buttonCustomDialog, buttonDialogFragment, buttonMenuActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class DialogActivity extends AppCompatActivity {
         buttonAlertDialog = findViewById(R.id.buttonAlertDialog);
         buttonCustomDialog = findViewById(R.id.buttonCustomDialog);
         buttonDialogFragment = findViewById(R.id.buttonDialogFragment);
+        buttonMenuActivity = findViewById(R.id.buttonMenuActivity);
 
         buttonAlertDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,11 +41,19 @@ public class DialogActivity extends AppCompatActivity {
             }
         });
 
+        buttonMenuActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DialogActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
         buttonDialogFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragmentExample dialogFragmentExample = new DialogFragmentExample();
-                dialogFragmentExample.show(getSupportFragmentManager(),"dialogFragment");
+                dialogFragmentExample.show(getSupportFragmentManager(), "dialogFragment");
             }
         });
     }
