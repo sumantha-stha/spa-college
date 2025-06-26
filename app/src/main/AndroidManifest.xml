@@ -13,7 +13,7 @@
         android:theme="@style/Theme.NewApplication"
         tools:targetApi="31">
         <activity
-            android:name=".dialog.DialogActivity"
+            android:name=".listviews.CustomListViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
 
         <activity android:name=".SecondActivity" />
         <activity android:name=".ChildActivity" />
-        <activity android:name=".menu.MenuActivity"/>
+        <activity android:name=".menu.MenuActivity" />
 
     </application>
 
