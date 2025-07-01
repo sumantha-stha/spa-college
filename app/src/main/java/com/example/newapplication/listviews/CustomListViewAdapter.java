@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.newapplication.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -39,6 +40,8 @@ public class CustomListViewAdapter extends ArrayAdapter<Movie> {
 
         textViewTitle.setText(movie.getTitle());
         textViewRelease.setText(movie.getReleaseDate());
+
+        Picasso.get().load(movie.getImageUrl()).into(imageViewMovie);
 
         return view;
     }
