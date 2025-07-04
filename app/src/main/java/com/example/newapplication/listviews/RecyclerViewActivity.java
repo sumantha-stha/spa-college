@@ -31,7 +31,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
-    private void initMovies(){
+    private void initMovies() {
         movieArrayList = new ArrayList<>();
 
         Movie movie = new Movie("God of War",

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.NewApplication"
         tools:targetApi="31">
         <activity
-            android:name=".listviews.RecyclerViewActivity"
+            android:name=".local_storage.LocalStorageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
