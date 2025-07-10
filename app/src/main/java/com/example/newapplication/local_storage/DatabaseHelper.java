@@ -73,4 +73,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return studentArrayList;
     }
+
+    public int updateStudent(Student student) {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(FULL_NAME, student.getFullName());
+        contentValues.put(SUBJECT, student.getSubject());
+
+        int rowId = sqLiteDatabase.update(STUDENT_TABLE, contentValues,
+                "id=?", new String[]{String.valueOf(student.getId())});
+
+        sqLiteDatabase.close();
+        return rowId;
+    }
 }
