@@ -41,6 +41,8 @@ public class SqlExampleActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(SqlExampleActivity.this);
 
+        fetchSavedData();
+
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,10 +99,20 @@ public class SqlExampleActivity extends AppCompatActivity {
             editTextName.setText("");
             editTextSubject.setText("");
 
-            studentArrayList = databaseHelper.getAllData();
-            studentAdapter = new StudentAdapter(SqlExampleActivity.this, studentArrayList);
-            listView.setAdapter(studentAdapter);
+            fetchSavedData();
         }
+    }
+
+    private void fetchSavedData() {
+        Log.i("TAG", "fetchSavedData: fetch data called ");
+
+        Log.w("TAG", "fetchSavedData: ");
+
+//        Log.e("TAG", "fetchSavedData: ", new NullPointerException());
+
+        studentArrayList = databaseHelper.getAllData();
+        studentAdapter = new StudentAdapter(SqlExampleActivity.this, studentArrayList);
+        listView.setAdapter(studentAdapter);
     }
 
     private void saveDataInDatabase(String fullName, String subject) {
